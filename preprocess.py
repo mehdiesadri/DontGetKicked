@@ -1,7 +1,6 @@
 import pandas as pd
 
 from sklearn.model_selection import train_test_split
-from sklearn import preprocessing
 
 num_cols = ['VehicleAge', 'VehOdo', 'VNZIP1', 'IsOnlineSale', 'WarrantyCost', 'MMRAcquisitionAuctionAveragePrice',
             'MMRAcquisitionAuctionCleanPrice', 'MMRAcquisitionRetailAveragePrice', 'MMRAcquisitonRetailCleanPrice',
@@ -12,18 +11,18 @@ cat_cols = ['Auction', 'Make', 'Model', 'Trim', 'SubModel', 'Color', 'Transmissi
 
 
 def summarize_df(df, cl=''):
-    print "\n## DS Shape: "
+    print ("\n## DS Shape: ")
     print df.shape
-    print "\n## DS Data Types: "
+    print ("\n## DS Data Types: ")
     print df.dtypes
-    print "\n## DS Head: "
-    print df.head(5)
-    print "\n## DS Summary: "
-    print df.describe()
+    print ("\n## DS Head: ")
+    print (df.head(5))
+    print ("\n## DS Summary: ")
+    print (df.describe())
     if len(cl) > 0 and cl in df:
-        print "\n## DS Class - {} - Distributions: ".format(cl)
-        print df.groupby(cl).size()
-        print "\n\n"
+        print("\n## DS Class - {} - Distributions: ".format(cl))
+        print (df.groupby(cl).size())
+        print ("\n\n")
 
 
 def down_sample_df(df, cl=''):
